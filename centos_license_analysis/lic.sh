@@ -19,6 +19,6 @@ done
 echo "$lic"
 }
 
-rpm -qa --qf '%{name}\n'| while read pkg; do lic=`rpm -qa --qf '%{license}' $pkg`; licfile=`rpm -ql $pkg | egrep "COPY|LIC|GPL"`; if [ -z "$licfile" ]; then licfile=`rpm -ql $pkg | egrep README`; fi; if [ -z "$licfile" ]; then licfile=$(getDefaultLic $pkg); fi; echo $pkg,$lic,$licfile; done 
+rpm -qa --qf '%{name}\n'| while read pkg; do lic=`rpm -qa --qf '%{license}' $pkg`; licfile=`rpm -ql $pkg | egrep "COPY|LIC|GPL"`; if [ -z "$licfile" ]; then licfile=$(getDefaultLic $pkg); readme=`rpm -ql $pkg | egrep README`; licfile="${licfile} ${readme}"; ref="REF";fi; echo $pkg,$lic,$licfile,$ref; ref=""; done 
 #rpm -qa --qf '%{name}\n'| while read pkg; do lic=`rpm -qa --qf '%{license}' $pkg`; licfile=`rpm -ql $pkg | egrep "COPY|LIC|GPL"`; if [ -z "$licfile" ]; then licfile=`rpm -ql $pkg | egrep README`; fi; if [ -z "$licfile" ]; then licfile=`getDefaultLic $pkg`; fi; echo $pkg,$lic,$licfile; done > lic_map.csv
 
