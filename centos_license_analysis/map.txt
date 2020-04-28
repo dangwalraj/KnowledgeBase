@@ -1,0 +1,13 @@
+LGPLv3+=/usr/tmp/LGPLv3+ 
+GPLv3+=/usr/tmp/LGPLv3 
+GPLv2=/usr/test/GPLv2 
+GPLv2+=/usr/test/GPLv2+ 
+LGPLv2=/usr/test/LGPLv2 
+LGPLv2+=/usr/test/LGPLv2+ 
+MIT=/usr/test/MIT 
+ASL 2.0=/usr/test/ASL 
+BSD=/usr/test/BSD 
+Public Domain=/usr/test/Public Domain 
+Artistic=/usr/test/Artistic 
+GPL+=/usr/test/GPL+ 
+ISC=/usr/test/ISC 
